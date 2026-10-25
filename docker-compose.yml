@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: philasecret
+      POSTGRES_USER: philasecret
+      POSTGRES_PASSWORD: change-me-in-development
+    ports:
+      - "5432:5432"
+    volumes:
+      - philasecret_pg:/var/lib/postgresql/data
+volumes:
+  philasecret_pg:
